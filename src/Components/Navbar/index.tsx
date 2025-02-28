@@ -1,10 +1,18 @@
 import { NavbarContainer } from "./styles";
-import { NavbarProps } from "./types";
 
-export const Navbar: React.FC<NavbarProps> = ({ title }) => {
+export const Navbar = () => {
   return (
-    <NavbarContainer data-aos="fade-up" data-aos-duration="500">
-      {title}
+    <NavbarContainer>
+      <div>
+        <a href="">PS</a>
+      </div>
+      <div>
+        <ul>
+          <li>React</li>
+          <li>Typescript</li>
+          <li>API</li>
+        </ul>
+      </div>
     </NavbarContainer>
   );
 };

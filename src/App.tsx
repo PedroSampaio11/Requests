@@ -13,7 +13,7 @@ export const App: React.FC = () => {
 
   return (
     <PageContainer>
-      <Navbar title="Template React" />
+      <Navbar/>
       <Main />
       <Footer />
     </PageContainer>
