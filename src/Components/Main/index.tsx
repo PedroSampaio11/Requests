@@ -1,4 +1,5 @@
 import { MainContainer } from "./styles";
+import { UseState } from "../Hooks/UseState";
 const nome = "pedro"
 const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
   console.log(e)
@@ -15,5 +16,7 @@ export const Main: React.FC = () => {
     clique nesse botao
     <button onClick={handleClick}> TEST </button>
     {Render()}
+
+    <UseState/>
   </MainContainer>;
 };
