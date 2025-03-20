@@ -1,5 +1,6 @@
 import { MainContainer } from "./styles";
 import { UseState } from "../Hooks/UseState";
+import { Lista } from "../Listas/Lista";
 const nome = "pedro"
 const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
   console.log(e)
@@ -18,5 +19,6 @@ export const Main: React.FC = () => {
     {Render()}
 
     <UseState/>
+    <Lista/>
   </MainContainer>;
 };
