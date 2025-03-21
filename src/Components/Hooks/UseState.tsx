@@ -4,7 +4,7 @@ import { useState } from "react";
 export const UseState: React.FC = () => {
   const [number, setNumber] = useState(22);
   return (
-    <Container>
+    <Container data-aos="fade-right" data-aos-duration="500">
       <Title> Hooks | Introdução</Title>
       <SubTitle> UseState</SubTitle>
       <SubTitle> o valor atual é : {number}</SubTitle>

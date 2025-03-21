@@ -2,7 +2,7 @@ import { NavbarContainer } from "./styles";
 
 export const Navbar = () => {
   return (
-    <NavbarContainer>
+    <NavbarContainer data-aos="zoom-in" data-aos-duration="500">
       <div>
         <a href="">PS</a>
       </div>
