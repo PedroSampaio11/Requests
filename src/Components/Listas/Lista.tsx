@@ -1,7 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
-
 export const Lista = () => {
+  const deleteRandom = () => {
+    const randomNumber = Math.floor(Math.random() * 4);  
+    setUsers((prev) => {
+      return prev.filter((user) => randomNumber !== user.id); 
+    });
+  };
   // quando nao tem id ou nao vem do banco de dados usar index
   const [stacks] = useState([
     "React",
@@ -11,11 +16,11 @@ export const Lista = () => {
     "Styled-Components",
   ]);
   // mais usado
-  const [users] = useState([
-    { id: 222, nome: "pedro" },
-    { id: 444, nome: "luiz" },
-    { id: 777, nome: "thais" },
-    { id: 111, nome: "maya" },
+  const [users, setUsers] = useState([
+    { id: 1, nome: "pedro" },
+    { id: 2, nome: "luiz" },
+    { id: 3, nome: "thais" },
+    { id: 4, nome: "maya" },
   ]);
   return (
     <Container data-aos="fade-left" data-aos-duration="500">
@@ -27,6 +32,9 @@ export const Lista = () => {
           <Stack key={user.id}> {user.nome} </Stack>
         ))}
       </List>
+      <Button onClick={deleteRandom}  >
+        apagar com previous state
+      </Button>
       <SubTitle>com index:</SubTitle>
       <List>
         {stacks.map((stack, index) => (
@@ -84,4 +92,11 @@ const Stack = styled.li`
   margin-bottom: 0.2rem;
   color: ${(props) => props.theme.colors.grey600};
   text-align: center;
+`;
+
+const Button = styled.button`
+  all: unset;
+  padding: 1.5rem 4rem;
+  border: 2px solid ${(props) => props.theme.colors.purple500};
+  margin-right:1rem ;
 `;
