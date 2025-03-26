@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { ListasRender } from "./ListasRender";
 export const Lista = () => {
   const deleteRandom = () => {
     const randomNumber = Math.floor(Math.random() * 4);  
@@ -41,6 +42,7 @@ export const Lista = () => {
           <Stack key={index}> {stack}</Stack>
         ))}
       </List>
+      <ListasRender/>
     </Container>
   );
 };
