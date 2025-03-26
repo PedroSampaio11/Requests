@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { PropsType} from "../Main";
+import { Filho } from "./FunctionProps";
 export const Props: React.FC<PropsType> = ({name}) => {
+  function showMessage(){ console.log('function props check')}
   return (
     <Container>
       <Title>
@@ -9,6 +11,7 @@ export const Props: React.FC<PropsType> = ({name}) => {
       <SubTitle>
        o nome é: {name}
       </SubTitle>
+      <Filho myFunction = {showMessage}/>
     </Container>
   )
 }

@@ -1,6 +1,7 @@
 import { MainContainer } from "./styles";
 import { UseState } from "../Hooks/UseState";
 import { Lista } from "../Listas/Lista";
+import { StateLift } from "../States/StateLift";
 import { Cond } from "../Condicional";
 import { Props } from "../Props";
 export interface PropsType {
@@ -13,5 +14,6 @@ export const Main: React.FC = () => {
     <Lista/>
     <Cond/>
     <Props name= {name}/>
+    <StateLift/>
   </MainContainer>;
 };
