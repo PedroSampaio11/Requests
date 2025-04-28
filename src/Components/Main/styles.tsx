@@ -6,7 +6,7 @@ export const MainContainer = styled.div`
   align-items : center;
   padding: 2rem 4rem;
   color: #d4d4d4;
-  height: 600px;
+  height: auto;
   button{
     padding: .8rem 4rem;
     border: 2px solid #ED145B;

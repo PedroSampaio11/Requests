@@ -4,6 +4,7 @@ import { Lista } from "../Listas/Lista";
 import { StateLift } from "../States/StateLift";
 import { Cond } from "../Condicional";
 import { Props } from "../Props";
+import { FormSection } from "../Forms/FormSection";
 export interface PropsType {
   name: string;
 }
@@ -15,5 +16,6 @@ export const Main: React.FC = () => {
     <Cond/>
     <Props name= {name}/>
     <StateLift/>
+    <FormSection/>
   </MainContainer>;
 };
