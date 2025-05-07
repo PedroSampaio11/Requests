@@ -1,21 +1,39 @@
-import React from "react";
 import styled from "styled-components";
-import { ChangeEvent } from 'react';
+import { ChangeEvent } from "react";
+import { useState } from "react";
 
 export const FormSection: React.FC = () => {
-  // gerenciando estado 
+  const [email, setEmail] = useState<string>("");
+  const [name, setName] = useState<string>("");
+  // gerenciando estado
   const handleName = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
+    setName(e.target.value);
+  };
+  console.log(name);
+  console.log(email);
+// evento para prevenir reload
+  const preventSubmit =  (e ) => {
+    e.preventDefault()
   }
   return (
     <Container>
-      <Form>
+      <Form onSubmit={preventSubmit}>
         {/* 1 forma */}
         <Label htmlFor="name"> Nome: </Label>
-        <Inputs type="text" name="name" placeholder="digite aqui..." onChange={handleName} />
+        <Inputs
+          type="text"
+          name="name"
+          placeholder="digite aqui..."
+          onChange={handleName}
+        />
         {/* 2 forma */}
         <Label htmlFor="email"> Email: </Label>
-        <Inputs type="email" name="email" placeholder="digite aqui..." />
+        <Inputs
+          type="email"
+          name="email"
+          placeholder="digite aqui..."
+          onChange={(e) => setEmail(e.target.value)}
+        />
         <Input type="submit" value={"enviar"} />
       </Form>
     </Container>
