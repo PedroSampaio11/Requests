@@ -9,7 +9,7 @@ export const ResgatandoDados: React.FC = () => {
   const url = "http://localhost:3000/products";
 
   // Cria uma "variável" chamada 'products' que começa vazia
-  const [products, setProducts] = useState<Product[]>([]); 
+  const [products, setProducts] = useState<Product[]>([]);
 
   // Esse código roda quando o componente for carregado
   useEffect(() => {
@@ -31,13 +31,11 @@ export const ResgatandoDados: React.FC = () => {
     <>
       <h2>Resgatando Dados com Fetch API</h2>
       <ul>
-        {products.map(
-          (p) => (
-            <li key={p.id}>
-        {p.name}
-            </li>
-          )
-        )}
+        {products.map((p) => (
+          <li key={p.id}>
+            {p.name} | R$ {p.price}
+          </li>
+        ))}
       </ul>
     </>
   );
