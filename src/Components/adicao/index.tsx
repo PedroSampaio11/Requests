@@ -29,7 +29,6 @@ export const AdicionarProd = () => {
       body: JSON.stringify(product),
     });
   };
-
   return (
     <Container>
       {/* 	Executa a função quando o formulário for enviado */}
