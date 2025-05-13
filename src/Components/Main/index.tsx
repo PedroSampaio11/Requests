@@ -1,6 +1,7 @@
 import { MainContainer } from "./styles";
 import { ResgatandoDados } from "../Resgate";
-import { AdicionarProd } from "../adicao";
+import { AdicionarProd } from "../Adicao";
+import { AdicionarProdDinamica } from "../AdicaoDinamica";
 export const Main: React.FC = () => {
 
   return (
@@ -8,6 +9,7 @@ export const Main: React.FC = () => {
       <h1>Listas De Produtos</h1>
       <ResgatandoDados/>
       <AdicionarProd />
+      <AdicionarProdDinamica/>
     </MainContainer>
   );
 };

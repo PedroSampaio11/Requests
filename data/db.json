@@ -34,6 +34,26 @@
       "id": "66e4",
       "name": "meia",
       "price": "15"
+    },
+    {
+      "id": "1af1",
+      "name": "pijama",
+      "price": "110"
+    },
+    {
+      "id": "d2b5",
+      "name": "calçao",
+      "price": "44"
+    },
+    {
+      "id": "5530",
+      "name": "test",
+      "price": "00"
+    },
+    {
+      "id": "d135",
+      "name": "test",
+      "price": 0
     }
   ]
 }
