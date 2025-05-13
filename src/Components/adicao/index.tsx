@@ -2,16 +2,43 @@ import { useState } from "react";
 import styled from "styled-components";
 
 export const AdicionarProd = () => {
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {};
+  const url = "http://localhost:3000/products";
+  // Guarda os valores digitados no formulário.
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // resgata oq foi digitado nos inputs, como se fosse ame: name e price: price
+    const product = {
+      name,
+      price,
+    };
+    console.log(product);
+
+    // Envia os dados para a API no formato JSON:
+    const res = await fetch(url, {
+      // envia dados
+      method: "POST",
+      // diz que o conteúdo é JSON
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // transforma o objeto em texto JSON
+      body: JSON.stringify(product),
+    });
+  };
+
   return (
     <Container>
+      {/* 	Executa a função quando o formulário for enviado */}
       <Form onSubmit={handleSubmit}>
         <input
           type="text"
           value={name}
           name="name"
+          // Sempre que o usuário digitar algo nesse input, atualize o estado com o valor digitado.
           onChange={(e) => setName(e.target.value)}
           placeholder="nome..."
         />

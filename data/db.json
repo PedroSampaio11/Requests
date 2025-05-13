@@ -1,24 +1,34 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "camiseta",
       "price": 60
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "camisa",
       "price": 70
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "calça",
       "price": 77
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "boné",
       "price": 90
+    },
+    {
+      "id": "3407",
+      "name": "regata",
+      "price": "44"
+    },
+    {
+      "id": "26eb",
+      "name": "perfume",
+      "price": "777"
     }
   ]
 }
