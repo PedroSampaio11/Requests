@@ -17,7 +17,7 @@ export const ResgatandoDados: React.FC = () => {
   // Estado para controle de carregamento
   const [loading, setLoading] = useState(false);
 
-const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   // useEffect roda uma vez quando o componente é carregado
   useEffect(() => {
@@ -31,7 +31,7 @@ const [error, setError] = useState<string | null>(null);
 
         setProducts(data); // Atualiza o estado
       } catch (error) {
-        setError("houve um erro")
+        setError("houve um erro");
       }
 
       setLoading(false); // Finaliza o carregamento
@@ -47,14 +47,18 @@ const [error, setError] = useState<string | null>(null);
       {/* Exibe mensagem de carregamento */}
       {loading && <p>Carregando produtos...</p>}
       {error && <p>{error}</p>}
-      {/* Lista os produtos */}
-      <ul>
-        {products.map((p) => (
-          <li key={p.id}>
-            {p.name} | R$ {p.price}
-          </li>
-        ))}
-      </ul>
+
+      {/* caso tenha um erro nao mostrar nada */}
+      {!error && (
+        // Lista os produtos
+        <ul>
+          {products.map((p) => (
+            <li key={p.id}>
+              {p.name} | R$ {p.price}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
