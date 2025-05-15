@@ -1,0 +1,37 @@
+### Operadores básicos que você precisa saber ###
+
+1. Operadores Lógicos:
+- &&  (E lógico)        → Exibe algo só se a condição for verdadeira.
+- ||  (OU lógico)       → Retorna o primeiro valor verdadeiro.
+- !   (Negação)         → Inverte o valor booleano.
+
+2. Operadores de Comparação:
+- ==   (Igualdade simples, pode converter tipos)
+- ===  (Igualdade estrita, sem conversão)
+- !=   (Diferente simples)
+- !==  (Diferente estrito)
+- >    (Maior que)
+- <    (Menor que)
+- >=   (Maior ou igual)
+- <=   (Menor ou igual)
+
+3. Operador Ternário:
+- condição ? valorSeSim : valorSeNão
+- Ex: isLogged ? "Logado" : "Deslogado"
+
+4. Operador de Coalescência Nula (??):
+- Retorna o valor da direita se o da esquerda for null ou undefined.
+- Ex: nome = user.nome ?? "Usuário Anônimo"
+
+5. Spread e Rest (...):
+- Spread: espalha os elementos de um array ou objeto.
+- Ex: novoArray = [...arrayAntigo, novoElemento]
+- Rest: captura o resto dos elementos.
+- Ex: const { nome, ...resto } = obj
+
+6. Atribuição com Operadores:
+- =, +=, -=, *=, /=
+
+7. Optional Chaining (?.):
+- Acessa propriedades de objetos que podem ser undefined sem dar erro.
+- Ex: user?.endereco?.cidade

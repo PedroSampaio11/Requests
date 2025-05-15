@@ -54,6 +54,11 @@
       "id": "d135",
       "name": "test",
       "price": 0
+    },
+    {
+      "id": "32d4",
+      "name": "test",
+      "price": 11
     }
   ]
 }
