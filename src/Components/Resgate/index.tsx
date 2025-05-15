@@ -17,16 +17,23 @@ export const ResgatandoDados: React.FC = () => {
   // Estado para controle de carregamento
   const [loading, setLoading] = useState(false);
 
+const [error, setError] = useState<string | null>(null);
+
   // useEffect roda uma vez quando o componente é carregado
   useEffect(() => {
-    setLoading(true);
-
     // Função assíncrona para buscar os dados
     const fetchData = async () => {
-      const res = await fetch(url); // Faz a requisição
-      const data = await res.json(); // Converte para JSON
+      setLoading(true);
 
-      setProducts(data); // Atualiza o estado
+      try {
+        const res = await fetch(url); // Faz a requisição
+        const data = await res.json(); // Converte para JSON
+
+        setProducts(data); // Atualiza o estado
+      } catch (error) {
+        setError("houve um erro")
+      }
+
       setLoading(false); // Finaliza o carregamento
     };
 
@@ -39,7 +46,7 @@ export const ResgatandoDados: React.FC = () => {
 
       {/* Exibe mensagem de carregamento */}
       {loading && <p>Carregando produtos...</p>}
-
+      {error && <p>{error}</p>}
       {/* Lista os produtos */}
       <ul>
         {products.map((p) => (
